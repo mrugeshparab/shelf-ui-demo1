@@ -13,5 +13,5 @@
   <path d="M110 330 L84 366 L128 356 Z" fill="#ffffff" opacity="0.85" />
   <circle cx="110" cy="330" r="12" fill="#ffd900" />
   <circle cx="540" cy="210" r="12" fill="#ffd900" />
-  <text x="320" y="440" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.55">Project thumbnail · replace me</text>
+  <text x="320" y="440" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.55">Flight Delay Explorer</text>
 </svg>

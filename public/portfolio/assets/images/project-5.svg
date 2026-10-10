@@ -15,5 +15,5 @@
   </g>
   <circle cx="96" cy="120" r="26" fill="#ffd900" opacity="0.9" />
   <circle cx="556" cy="170" r="14" fill="#ffffff" opacity="0.6" />
-  <text x="320" y="452" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.5">Project thumbnail · replace me</text>
+  <text x="320" y="452" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.5">EV Charging Planner</text>
 </svg>

@@ -1,23 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Placeholder portrait">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Portrait of Alex Rivera (illustrated monogram)">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#4a25ed" />
       <stop offset="1" stop-color="#011aff" />
     </linearGradient>
-    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffd900" />
-      <stop offset="1" stop-color="#ffae00" />
-    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.38" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
   </defs>
   <rect width="520" height="520" fill="url(#bg)" />
+  <rect width="520" height="520" fill="url(#glow)" />
   <!-- soft decorations -->
   <circle cx="86" cy="96" r="46" fill="#ffffff" opacity="0.12" />
   <circle cx="452" cy="128" r="26" fill="#ffd900" opacity="0.5" />
   <circle cx="430" cy="430" r="60" fill="#ffffff" opacity="0.1" />
   <path d="M60 430l12 28 28 12-28 12-12 28-12-28-28-12 28-12z" fill="#ffd900" opacity="0.65" />
-  <!-- avatar silhouette -->
-  <circle cx="260" cy="205" r="78" fill="#f3f4fb" />
-  <path d="M260 300c-92 0-150 56-150 128v92h300v-92c0-72-58-128-150-128z" fill="#f3f4fb" />
-  <!-- tie / accent -->
-  <path d="M260 300l-26 46 26 120 26-120z" fill="#ffd900" opacity="0.9" />
+  <!-- monogram -->
+  <circle cx="260" cy="242" r="132" fill="#ffffff" opacity="0.1" />
+  <circle cx="260" cy="242" r="132" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3" />
+  <text
+    x="260" y="242"
+    text-anchor="middle" dominant-baseline="central"
+    font-family="Poppins, 'Segoe UI', sans-serif"
+    font-size="118" font-weight="700" letter-spacing="-4"
+    fill="#ffffff"
+  >AR</text>
+  <text
+    x="260" y="352"
+    text-anchor="middle"
+    font-family="Poppins, 'Segoe UI', sans-serif"
+    font-size="26" font-weight="500" letter-spacing="6"
+    fill="#ffd900"
+  >DATA</text>
 </svg>

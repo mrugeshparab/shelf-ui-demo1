@@ -18,11 +18,11 @@
      CONFIG — edit these to make the site yours (see README.md)
      ------------------------------------------------------------------------ */
   var CONFIG = {
-    // Your real email address. Leave "" to keep the [placeholder] behaviour,
-    // which shows a hint instead of opening a mail client with a wrong address.
-    email: "",
+    // Example persona email. "example.com" is reserved for documentation and
+    // never receives mail — swap in your real address before publishing.
+    email: "alex.rivera@example.com",
     // Rotating hero text. Also editable in index.html (data-typed-strings).
-    typedStrings: ["[Web Development]", "[UI/UX Design]", "[Open Source]", "[Creative Coding]"],
+    typedStrings: ["Data Analytics", "Business Intelligence", "Data Engineering", "Machine Learning"],
   };
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -516,7 +516,7 @@
      8. Placeholder links — honest hints instead of broken navigation
      ------------------------------------------------------------------------ */
   var PLACEHOLDER_HINT =
-    "Placeholder link — put your real URL in index.html (see README.md).";
+    "Example link — add your real URL in index.html (see README.md).";
 
   document.addEventListener("click", function (event) {
     var link = event.target.closest ? event.target.closest("[data-placeholder-link]") : null;

@@ -15,5 +15,5 @@
   <circle cx="430" cy="310" r="9" fill="#ffd900" />
   <circle cx="120" cy="130" r="30" fill="#ffd900" opacity="0.85" />
   <path d="M540 96l9 20 20 9-20 9-9 20-9-20-20-9 20-9z" fill="#ffffff" opacity="0.75" />
-  <text x="320" y="452" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.5">Project thumbnail · replace me</text>
+  <text x="320" y="452" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.5">Bike Share Analytics</text>
 </svg>
