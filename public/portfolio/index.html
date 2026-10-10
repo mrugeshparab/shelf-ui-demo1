@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[Your Name] — personal portfolio. Projects, skills, experience, education and contact." />
+  <meta name="author" content="[Your Name]" />
+  <title>Portfolio · [Your Name]</title>
+
+  <!-- Favicon (placeholder, replace with your own) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Google Fonts: Poppins (headings/UI) + Nunito (body copy & buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#home">Skip to main content</a>
+
+  <!-- ============================================================
+       SVG icon sprite — single source of truth for all icons so the
+       page needs no icon library (Font Awesome not required).
+       ============================================================ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true" focusable="false">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></symbol>
+    <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" /></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16m0 0l-6-6m6 6l6-6" /></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.3 7-11a7 7 0 10-14 0c0 5.7 7 11 7 11z" /><circle cx="12" cy="10" r="2.6" /></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" /></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4L10 14" /><path d="M19 13v6a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h6" /></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16" /></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8 21 3z" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4.5 20a7.5 7.5 0 0115 0" /></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z" /></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18" /></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z" /><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" /><path d="M22 9v6" /></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" /></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-8 8H4l2.3-2.9A8 8 0 1121 12z" /></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-10-9.3C.4 8.6 2 5 5.5 5c2 0 3.4 1.1 4.2 2.3l.3.4.3-.4C11.1 6.1 12.5 5 14.5 5 18 5 19.6 8.6 22 11.7 19.5 16.3 12 21 12 21z" /></symbol>
+    <!-- brand icons -->
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3z" /></symbol>
+    <symbol id="i-skill-code" viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" /></symbol>
+    <symbol id="i-skill-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></symbol>
+    <symbol id="i-skill-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3.2" /><path d="M4 6v6c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2V6M4 12v6c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2v-6" /></symbol>
+    <symbol id="i-skill-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 01-.4-9A6 6 0 0118 9.5a4.2 4.2 0 01-.5 8.5H7z" /></symbol>
+    <symbol id="i-skill-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18" /></symbol>
+    <symbol id="i-skill-mobile" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" /><path d="M11 18.5h2" /></symbol>
+    <symbol id="i-skill-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.7v5.6c0 4.6-3 7.6-7 9.7-4-2.1-7-5.1-7-9.7V5.7L12 3z" /><path d="M9 12l2.2 2.2L15.5 10" /></symbol>
+    <symbol id="i-skill-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.7 0 2.3-1.2 1.6-2.4-.7-1.3.1-2.6 1.6-2.6H17a4 4 0 004-4c0-4.9-4-9-9-9z" /><circle cx="7.5" cy="11" r="1.2" fill="currentColor" stroke="none" /><circle cx="10.5" cy="7" r="1.2" fill="currentColor" stroke="none" /><circle cx="15" cy="7.5" r="1.2" fill="currentColor" stroke="none" /></symbol>
+  </svg>
+
+  <!-- ================= Header / navigation ================= -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo">[Your&nbsp;Name]<span class="logo-dot">.</span></a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu" /></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close" /></svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#work" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ================= Hero ================= -->
+    <section class="home" id="home" aria-label="Introduction">
+      <!-- Particle network background (hand-written canvas, see script.js) -->
+      <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+      <div class="home-inner container">
+        <div class="home-content">
+          <p class="home-greeting reveal">Hi There <span class="wave" aria-hidden="true">👋</span>,</p>
+          <h1 class="home-title reveal" style="--reveal-delay: 0.1s">
+            I'm <span class="accent">[Your&nbsp;Name]</span>
+          </h1>
+          <p class="home-into reveal" style="--reveal-delay: 0.2s">
+            <span class="into-label">i am into</span>
+            <span
+              class="typed"
+              id="typed"
+              data-typed-strings='["[Web Development]","[UI/UX Design]","[Open Source]","[Creative Coding]"]'
+            >[Web Development]</span><span class="typed-cursor" id="typed-cursor" aria-hidden="true">|</span>
+          </p>
+
+          <div class="home-actions reveal" style="--reveal-delay: 0.3s">
+            <a href="#about" class="btn btn-primary">
+              About Me
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-down" /></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+
+          <ul class="socials reveal" style="--reveal-delay: 0.4s" aria-label="Social links">
+            <li>
+              <a href="#" class="social-link" data-placeholder-link aria-label="LinkedIn profile (placeholder)">
+                <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link" data-placeholder-link aria-label="GitHub profile (placeholder)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="social-link" aria-label="Contact by email">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="home-visual reveal" style="--reveal-delay: 0.25s">
+          <div class="portrait-ring" data-tilt>
+            <img
+              src="assets/images/portrait.svg"
+              alt="Placeholder portrait — replace with your own photo"
+              class="portrait"
+              width="520"
+              height="520"
+            />
+          </div>
+          <span class="portrait-badge" aria-hidden="true">✦</span>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+      </a>
+    </section>
+
+    <!-- ================= About ================= -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+
+        <div class="about-grid">
+          <figure class="about-visual reveal" data-tilt>
+            <img
+              src="assets/images/portrait.svg"
+              alt="Placeholder portrait — replace with your own photo"
+              class="about-img"
+              width="640"
+              height="640"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="about-copy">
+            <h3 class="reveal">I'm <span class="accent">[Your Name]</span></h3>
+            <p class="about-role reveal" style="--reveal-delay: 0.08s">[Your Role / Title]</p>
+            <p class="reveal" style="--reveal-delay: 0.16s">
+              [Write two or three sentences about yourself: what you do, what you enjoy
+              building, and the kind of problems you like to solve. Keep it personal and
+              specific — this paragraph is the first thing visitors read after your name.]
+            </p>
+            <p class="reveal" style="--reveal-delay: 0.24s">
+              [Add a second short paragraph: your background, what you are currently
+              learning or working on, and how you like to collaborate with others.]
+            </p>
+
+            <ul class="about-details reveal" style="--reveal-delay: 0.32s">
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                <span data-email-text>[your.email@example.com]</span>
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+                <span>[Your City, Country]</span>
+              </li>
+            </ul>
+
+            <div class="about-actions reveal" style="--reveal-delay: 0.4s">
+              <a href="#" class="btn btn-primary" data-placeholder-link>
+                Resume
+                <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+              </a>
+              <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Skills ================= -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Skills &amp; Abilities</h2>
+        <p class="section-subtitle reveal" style="--reveal-delay: 0.08s">
+          [Replace these placeholder tiles with your own tools and technologies.]
+        </p>
+
+        <ul class="skills-grid">
+          <li class="skill reveal"><svg class="icon" aria-hidden="true"><use href="#i-skill-code" /></svg><span>[Skill 1]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.05s"><svg class="icon" aria-hidden="true"><use href="#i-skill-chart" /></svg><span>[Skill 2]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.1s"><svg class="icon" aria-hidden="true"><use href="#i-skill-db" /></svg><span>[Skill 3]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.15s"><svg class="icon" aria-hidden="true"><use href="#i-skill-cloud" /></svg><span>[Skill 4]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.2s"><svg class="icon" aria-hidden="true"><use href="#i-skill-globe" /></svg><span>[Skill 5]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.25s"><svg class="icon" aria-hidden="true"><use href="#i-skill-mobile" /></svg><span>[Skill 6]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.3s"><svg class="icon" aria-hidden="true"><use href="#i-skill-shield" /></svg><span>[Skill 7]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.35s"><svg class="icon" aria-hidden="true"><use href="#i-skill-palette" /></svg><span>[Skill 8]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.4s"><svg class="icon" aria-hidden="true"><use href="#i-skill-chart" /></svg><span>[Skill 9]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.45s"><svg class="icon" aria-hidden="true"><use href="#i-skill-code" /></svg><span>[Skill 10]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.5s"><svg class="icon" aria-hidden="true"><use href="#i-skill-globe" /></svg><span>[Skill 11]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.55s"><svg class="icon" aria-hidden="true"><use href="#i-skill-cloud" /></svg><span>[Skill 12]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.6s"><svg class="icon" aria-hidden="true"><use href="#i-skill-db" /></svg><span>[Skill 13]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.65s"><svg class="icon" aria-hidden="true"><use href="#i-skill-palette" /></svg><span>[Skill 14]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.7s"><svg class="icon" aria-hidden="true"><use href="#i-skill-mobile" /></svg><span>[Skill 15]</span></li>
+          <li class="skill reveal" style="--reveal-delay: 0.75s"><svg class="icon" aria-hidden="true"><use href="#i-skill-shield" /></svg><span>[Skill 16]</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Experience ================= -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal">My Experience</h2>
+
+        <div class="box-grid">
+          <article class="box reveal">
+            <span class="box-icon" aria-hidden="true"><svg class="icon"><use href="#i-briefcase" /></svg></span>
+            <h3>[Job Title 1]</h3>
+            <h4>[Company Name]</h4>
+            <p class="box-date">[Month Year] – [Month Year / Present]</p>
+            <p class="box-desc">[One sentence describing your role and a concrete contribution. No metrics you cannot back up.]</p>
+          </article>
+
+          <article class="box reveal" style="--reveal-delay: 0.12s">
+            <span class="box-icon" aria-hidden="true"><svg class="icon"><use href="#i-briefcase" /></svg></span>
+            <h3>[Job Title 2]</h3>
+            <h4>[Company Name]</h4>
+            <p class="box-date">[Month Year] – [Month Year]</p>
+            <p class="box-desc">[One sentence describing your role and a concrete contribution.]</p>
+          </article>
+
+          <article class="box reveal" style="--reveal-delay: 0.24s">
+            <span class="box-icon" aria-hidden="true"><svg class="icon"><use href="#i-briefcase" /></svg></span>
+            <h3>[Job Title 3 / Internship]</h3>
+            <h4>[Company / Organization]</h4>
+            <p class="box-date">[Month Year] – [Month Year]</p>
+            <p class="box-desc">[One sentence describing your role and a concrete contribution.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Education ================= -->
+    <section class="section education" id="education">
+      <div class="container">
+        <h2 class="section-title reveal">My Education</h2>
+
+        <blockquote class="education-quote reveal" style="--reveal-delay: 0.08s">
+          “Education is the kindling of a flame, not the filling of a vessel.”
+          <cite>— attributed to Socrates</cite>
+        </blockquote>
+
+        <div class="box-grid box-grid-2">
+          <article class="box reveal">
+            <span class="box-icon" aria-hidden="true"><svg class="icon"><use href="#i-cap" /></svg></span>
+            <h3>[Degree / Program]</h3>
+            <h4>[University / School]</h4>
+            <p class="box-date">[Year] – [Year]</p>
+            <p class="box-desc">[Optional: focus, honours, or thesis topic — only if true.]</p>
+          </article>
+
+          <article class="box reveal" style="--reveal-delay: 0.12s">
+            <span class="box-icon" aria-hidden="true"><svg class="icon"><use href="#i-cap" /></svg></span>
+            <h3>[Earlier Degree / Certification]</h3>
+            <h4>[Institution]</h4>
+            <p class="box-date">[Year] – [Year]</p>
+            <p class="box-desc">[Optional detail, e.g. relevant coursework or certification name.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Projects ================= -->
+    <section class="section work" id="work">
+      <div class="container">
+        <h2 class="section-title reveal">My Projects</h2>
+        <p class="section-subtitle reveal" style="--reveal-delay: 0.08s">
+          [Six placeholder cards — swap in your own screenshots, titles, blurbs and links.]
+        </p>
+
+        <div class="project-grid">
+          <article class="project reveal" data-tilt>
+            <img src="assets/images/project-1.svg" alt="Placeholder thumbnail for project 1" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 1]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 1 (placeholder link)">
+                    View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                  </a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 1 repository (placeholder link)">
+                    Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--reveal-delay: 0.1s" data-tilt>
+            <img src="assets/images/project-2.svg" alt="Placeholder thumbnail for project 2" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 2]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 2 (placeholder link)">View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 2 repository (placeholder link)">Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--reveal-delay: 0.2s" data-tilt>
+            <img src="assets/images/project-3.svg" alt="Placeholder thumbnail for project 3" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 3]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 3 (placeholder link)">View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 3 repository (placeholder link)">Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--reveal-delay: 0.05s" data-tilt>
+            <img src="assets/images/project-4.svg" alt="Placeholder thumbnail for project 4" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 4]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 4 (placeholder link)">View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 4 repository (placeholder link)">Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--reveal-delay: 0.15s" data-tilt>
+            <img src="assets/images/project-5.svg" alt="Placeholder thumbnail for project 5" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 5]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 5 (placeholder link)">View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 5 repository (placeholder link)">Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--reveal-delay: 0.25s" data-tilt>
+            <img src="assets/images/project-6.svg" alt="Placeholder thumbnail for project 6" width="640" height="480" loading="lazy" />
+            <div class="project-content">
+              <h3 class="project-title">[Project Title 6]</h3>
+              <div class="project-panel">
+                <p>[One or two sentences: what it does, who it is for, and what you built it with.]</p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" data-placeholder-link aria-label="Open project 6 (placeholder link)">View <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                  <a href="#" class="btn btn-small btn-outline" data-placeholder-link aria-label="Open project 6 repository (placeholder link)">Code <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Get in Touch</h2>
+
+        <div class="contact-card reveal" style="--reveal-delay: 0.1s">
+          <div class="contact-visual" aria-hidden="true">
+            <!-- Decorative illustration: mail + chat scene -->
+            <svg viewBox="0 0 460 380" role="img" aria-hidden="true" class="contact-illustration">
+              <defs>
+                <linearGradient id="ci-g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#4a25ed" /><stop offset="1" stop-color="#011aff" />
+                </linearGradient>
+                <linearGradient id="ci-g2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffd900" /><stop offset="1" stop-color="#ffae00" />
+                </linearGradient>
+              </defs>
+              <circle cx="230" cy="190" r="150" fill="#e5ecfb" />
+              <rect x="120" y="130" width="220" height="150" rx="14" fill="url(#ci-g1)" />
+              <path d="M126 142 L230 226 L334 142" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+              <rect x="60" y="70" width="120" height="74" rx="14" fill="#ffffff" stroke="#d7dcf5" stroke-width="3" />
+              <path d="M84 150 l0 18 18 -18" fill="#ffffff" stroke="#d7dcf5" stroke-width="3" stroke-linejoin="round" />
+              <circle cx="94" cy="107" r="8" fill="#4a25ed" /><circle cx="120" cy="107" r="8" fill="#011aff" /><circle cx="146" cy="107" r="8" fill="#ffd900" />
+              <rect x="290" y="228" width="128" height="84" rx="14" fill="url(#ci-g2)" />
+              <path d="M402 318 l0 20 -22 -20" fill="#ffae00" />
+              <path d="M316 262 h76 M316 282 h52" stroke="#5a4200" stroke-width="7" stroke-linecap="round" opacity=".55" />
+              <circle cx="392" cy="76" r="14" fill="#4a25ed" opacity=".85" />
+              <circle cx="74" cy="268" r="10" fill="#011aff" opacity=".7" />
+              <path d="M406 150 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6z" fill="#4a25ed" opacity=".8" />
+              <path d="M96 316 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5z" fill="#ffd900" />
+            </svg>
+          </div>
+
+          <div class="contact-body">
+            <p class="contact-intro">
+              [A friendly sentence inviting visitors to reach out — e.g. open to
+              opportunities, collaborations or just a hello.]
+            </p>
+
+            <a class="btn btn-primary contact-mail" id="contact-mail" href="#">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              Email <span data-email-text>[your.email@example.com]</span>
+            </a>
+            <p class="contact-note">
+              This button opens your own mail app — this site never sends anything by itself.
+            </p>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field field-full">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" rows="4" placeholder="Write your message…" required></textarea>
+              </div>
+              <div class="field-full contact-submit">
+                <button type="submit" class="btn btn-primary">
+                  Compose in mail app
+                  <svg class="icon" aria-hidden="true"><use href="#i-send" /></svg>
+                </button>
+                <p class="contact-note">
+                  Nothing is sent from this page — submitting opens your default email app
+                  with the message pre-filled.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo logo-light">[Your&nbsp;Name]<span class="logo-dot">.</span></a>
+        <p>
+          [A one-sentence summary of who you are and what you build. Placeholder text —
+          replace me.]
+        </p>
+        <ul class="socials socials-light" aria-label="Social links">
+          <li><a href="#" class="social-link" data-placeholder-link aria-label="LinkedIn profile (placeholder)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg></a></li>
+          <li><a href="#" class="social-link" data-placeholder-link aria-label="GitHub profile (placeholder)"><svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+            <span data-email-text>[your.email@example.com]</span>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+            <span>[Your City, Country]</span>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>
+            <span>[Your availability / preferred channel]</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-credit">
+      Designed &amp; built with <span class="heart" aria-hidden="true">❤</span> by
+      <a href="#home">[Your Name]</a> · <span id="year">2026</span>
+    </p>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#home" class="scroll-top" id="scroll-top" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#i-chevron-up" /></svg>
+  </a>
+
+  <!-- Toast for placeholder links -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Placeholder project thumbnail: analytics dashboard">
+  <defs>
+    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1464" /><stop offset="1" stop-color="#4a25ed" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#p1)" />
+  <g opacity="0.16" stroke="#ffffff" stroke-width="1.5">
+    <path d="M0 120h640M0 240h640M0 360h640M160 0v480M320 0v480M480 0v480" />
+  </g>
+  <g fill="#ffffff" opacity="0.92">
+    <rect x="120" y="290" width="54" height="90" rx="8" />
+    <rect x="200" y="230" width="54" height="150" rx="8" opacity="0.85" />
+    <rect x="280" y="180" width="54" height="200" rx="8" opacity="0.7" />
+    <rect x="360" y="250" width="54" height="130" rx="8" opacity="0.85" />
+    <rect x="440" y="150" width="54" height="230" rx="8" opacity="0.6" />
+  </g>
+  <path d="M130 250 L230 190 L320 130 L470 90" fill="none" stroke="#ffd900" stroke-width="8" stroke-linecap="round" />
+  <circle cx="470" cy="90" r="13" fill="#ffd900" />
+  <text x="320" y="440" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.55">Project thumbnail · replace me</text>
+</svg>
